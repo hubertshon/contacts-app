@@ -2,7 +2,7 @@ class Api::ContactsController < ApplicationController
 
   def index
     @contact = Contact.all
-    render "show.json.jb"
+    render "index.json.jb"
   end
 
   def show
@@ -33,8 +33,7 @@ class Api::ContactsController < ApplicationController
   def destroy
     @contact = Contact.find(params[:id])
     @contact.destroy
-    render json: "Item destroyed"
+    render json: { message: "Item destroyed" }
   end
-
 
 end
